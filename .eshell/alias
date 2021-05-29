@@ -1,0 +1,8 @@
+alias wscripts cd e:/files/cod/ipython/quickies
+alias cde cd e:/
+alias python E:/python/python.exe
+alias walt cd c:/Users/whitaker
+alias gdrive cd c:/Users/whitaker/Google Drive/
+alias delta cd e:/files/cod
+alias gtf cd e:/files
+alias kcl kubectl $*
