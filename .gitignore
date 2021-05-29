@@ -132,5 +132,9 @@ dmypy.json
 .eshell/history
 .eshell/lastdir
 
+.emacs.d/elpa/archive-contents
+.emacs.d/elpa/builtin-packages
+.emacs.d/auto-save-list
+
 *~
 ~*
