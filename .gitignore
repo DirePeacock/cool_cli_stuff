@@ -131,3 +131,6 @@ dmypy.json
 
 .eshell/history
 .eshell/lastdir
+
+*~
+~*
