@@ -7,7 +7,7 @@
 (add-to-list 'package-archives 
              '("gnu" . "https://elpa.gnu.org/packages/") t)
 
-(add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+;;(add-to-list 'package-archives (cons "melpa" (concat proto "https://melpa.org/packages/")) t)
 
 ;;(package-initialize)
 (setq initial-buffer-choice `eshell)
