@@ -1,10 +1,15 @@
 #! python
+import logging
 import sys
 import os
 import argparse
 from PIL import Image
 import pathlib
+import enum
 
+outline_types = enum.Enum("outline_types", "full dots none")
+""" outline type is for the texture output to have divisions in it, to help user devide it
+"""
 
 """
 Feb 2023
@@ -62,17 +67,29 @@ def analyseImage(path):
     return results
 
 
-def processImageToTexture(path, partial=None, texture=True):
+def processImageToTexture(
+    path,
+    partial=None,
+    texture=True,
+    outline_type=outline_types.none,
+    px_pad=1,
+    odd_color=(2, 210, 69, 255),
+):
     """the same as the last one but it makes a texture instead of a sequence of images"""
+
     mode = analyseImage(path)["mode"]
 
     im = Image.open(path)
 
     i = 0
     p = im.getpalette()
+
     last_frame = im.convert("RGBA")
     if texture:
-        new_size = (im.width * im.n_frames, im.height)
+        new_size = (
+            px_pad + ((px_pad + im.width) * im.n_frames),
+            im.height + px_pad * 2,
+        )
         new_image = Image.new("RGBA", new_size)
     good_job = False
     new_files = []
@@ -80,8 +97,8 @@ def processImageToTexture(path, partial=None, texture=True):
         while True:
             if not im.getpalette() and im.mode in ("L", "LA", "P", "PA"):
                 im.putpalette(p)
-
-            new_frame = Image.new("RGBA", im.size)
+            bg_color = (0, 0, 0, 0)  # (0, 0, 127, 255)
+            new_frame = Image.new("RGBA", im.size, bg_color)
 
             if mode == "partial" and partial is None or partial:
                 new_frame.paste(last_frame)
@@ -89,10 +106,13 @@ def processImageToTexture(path, partial=None, texture=True):
             new_frame.paste(im, (0, 0), im.convert("RGBA"))
 
             if texture:
-                new_image.paste(new_frame, (i * im.width, 0))
+                x_offset = px_pad + i * (im.width + px_pad)
+                new_image.paste(new_frame, (x_offset, px_pad))
 
             else:
-                new_path = pathlib.Path(path).parent / f"{pathlib.Path(path).stem}-{i}.png"
+                new_path = (
+                    pathlib.Path(path).parent / f"{pathlib.Path(path).stem}-{i}.png"
+                )
                 new_frame.save(new_path, "PNG")
                 new_files.append(new_path)
 
@@ -104,22 +124,45 @@ def processImageToTexture(path, partial=None, texture=True):
 
     except EOFError:
         if good_job:
-            print("good job, we got all the frames")
+            logging.debug("good job, we got all the frames")
+
     if good_job and texture:
+        # outlining the texture frames
+        horizontal_bar = Image.new("RGBA", (new_size[0], 1), odd_color)
+        vertical_bar = Image.new("RGBA", (1, new_size[1]), odd_color)
+        # outline_type = outline_types.full
+        if outline_type == outline_types.full:
+            new_image.paste(horizontal_bar, (0, 0))
+            new_image.paste(horizontal_bar, (0, new_size[1] - 1))
+
+        for i in range(im.n_frames + 1):
+            x_offset = px_pad + i * (im.width + px_pad)
+            if outline_type == outline_types.full:
+                new_image.paste(vertical_bar, (x_offset - px_pad, px_pad))
+            elif outline_type == outline_types.dots:
+                for y_val in [0, new_size[1] - 1]:
+                    new_image.putpixel((x_offset - px_pad, y_val), odd_color)
+            # new_image.paste(vertical_bar, (x_offset, new_size[1] - 1))
+
+        # saving the texture
         new_path = pathlib.Path(path).parent / f"{pathlib.Path(path).stem}_texture.png"
 
-        print(new_path)
+        logging.debug(new_path)
         new_image.save(new_path, "PNG")
         new_files.append(new_path)
-    for file in new_files:
-        print(f"{file}")
 
 
 test_img = "E:\\files\\cod\\vandal5\\src\\vandal5\\artassets\\crit_slash.gif"
 
 
 def main(args):
-    processImageToTexture(args.image, partial=args.partial, texture=(not args.seq))
+    processImageToTexture(
+        args.image,
+        partial=args.partial,
+        texture=(not args.seq),
+        outline_type=outline_types[args.outline],
+    )
+    logging.basicConfig(level=logging.DEBUG if args.debug else logging.INFO)
 
 
 def parse_args(args_):
@@ -132,7 +175,18 @@ def parse_args(args_):
         help="image path to apply palette to",
     )
     parser.add_argument("-s", "--seq", action="store_true", help="sequence of images")
-    parser.add_argument("-p", "--partial", action="store_true", help="use partial replace mode")
+    parser.add_argument(
+        "-p", "--partial", action="store_true", help="use partial replace mode"
+    )
+    parser.add_argument("-d", "--debug", action="store_true", help="debug output")
+    parser.add_argument(
+        "-o",
+        "--outline",
+        type=str,
+        default="dots",
+        help="outline type",
+        choices=["full", "dots", "none"],
+    )
     return parser.parse_args(args_)
 
 
