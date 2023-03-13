@@ -1,6 +1,6 @@
 import colorsys
 
-# colorsys uses floats 0.0-1.0 and PIL expects ints 0-255
+# colorsys uses floats 0.0f-1.0f and PIL expects ints 0-255
 PIL_MAX = 255
 
 

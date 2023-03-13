@@ -1,0 +1,242 @@
+
+{
+    "major arcana":[
+        {
+            "name":"The Fool",
+            "number":0,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/RWS_Tarot_00_Fool.jpg/220px-RWS_Tarot_00_Fool.jpg",
+            "upright":"begginnings, innocence, a new start",
+            "reversed":"recklessness, foolishness, carelessness",
+            "stand user": "Iggy",
+            "stand name": "The fool",
+            "stand ability": "The Fool can contorl/morph into sand"
+        },
+        {
+            "name":"The Magician",
+            "number":1,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/RWS_Tarot_01_Magician.jpg/220px-RWS_Tarot_01_Magician.jpg",
+            "upright":"willpower, desire, skill, manifestation",
+            "reversed":"manipulation, trickery, illusion",
+            
+            "stand user": "muhammad avdol",
+            "stand name": "Magician's Red",
+            "stand ability": "Magician's Red can contorl into fire"
+        },
+        {
+            "name":"The High Priestess",
+            "number":2,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/RWS_Tarot_02_High_Priestess.jpg/220px-RWS_Tarot_02_High_Priestess.jpg",
+            "upright":"spirituality, intuition, mystery, secrets",
+            "reversed":"lack of intuition, closed off, repressed emotions",
+            "stand name":"The High Priestess",
+            "stand user": "midler",
+            "stand ability":"return things to their original state"
+        },
+        {
+            "name":"The Empress",
+            "number":3,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/RWS_Tarot_03_Empress.jpg/220px-RWS_Tarot_03_Empress.jpg",
+            "upright":"devine feminine, nature, abundance, fertility, creativity",
+            "reversed":"insecurity, overindulgence, smothering",
+            "stand name": "The Empress",
+            "stand user": "nena",
+            "stand ability": "binds to a persons blood and takes over their body"
+
+            
+        },
+        {
+            "name":"The Emperor",
+            "number":4,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/RWS_Tarot_04_Emperor.jpg/220px-RWS_Tarot_04_Emperor.jpg",
+            "upright":"stability, authority, structure, leadership",
+            "reversed":"tyranny, domineering, rigidity",
+            "stand name": "The Emperor",
+            "stand user": "hol horse",
+            "stand ability": "gun"
+
+            
+        },
+        {
+            "name":"The Hierophant",
+            "number":5,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/RWS_Tarot_05_Hierophant.jpg/220px-RWS_Tarot_05_Hierophant.jpg",
+            "upright":"tradition, convention, conformity, beliefs",
+            "reversed":"rebellion, nonconformity, ignorance",
+            "stand name": "Hierophant Green",
+            "stand user": "noriaki kakyoin",
+            "stand ability": "emerald splash, long range stand"
+            
+        },
+        {
+            "name":"The Lovers",
+            "number":6,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/RWS_Tarot_06_Lovers.jpg/220px-RWS_Tarot_06_Lovers.jpg",
+            "upright":"love, harmony, union, relationships, balance",
+            "reversed":"disharmony, unfaithfulness, indecision, imbalance",
+            "stand name": "The Lovers",
+            "stand user": "Steely Dan",
+            "stand ability": "microscopic monster that tries to kill you from inside"            
+        },
+        {
+            "name":"The Chariot",
+            "number":7,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RWS_Tarot_07_Chariot.jpg/220px-RWS_Tarot_07_Chariot.jpg",
+            "upright":"success, control, willpower, determination, discipline",
+            "reversed":"forceful, reckless, aggression, lack of control",
+            "stand user": "Jean Pierre Polnareff",
+            "stand name": "Silver Chariot",
+            "stand ability": "The Chariot is a fast 2m stand with a sword"
+        },
+        {
+            "name":"Strength",
+            "number":8,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/RWS_Tarot_08_Strength.jpg/220px-RWS_Tarot_08_Strength.jpg",
+            "upright":"strength, courage, compassion, patience, self-confidence",
+            "reversed":"self-doubt, weakness, cowardice, forcefulness",
+            "stand name": "Strength",
+            "stand user": "orangutang",
+            "stand ability": "magic boat thing"            
+        },
+        {
+            "name":"The Hermit",
+            "number":9,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/RWS_Tarot_09_Hermit.jpg/220px-RWS_Tarot_09_Hermit.jpg",
+            "upright":"self-reflection, introspection, contemplation, wisdom",
+            "reversed":"lone wolf, isolation, loneliness, rejection, retreat to conformity",
+            "stand name" : "Hermit Purple",
+            "stand user": "Joseph Joestar",
+            "stand ability": "Hermit Purple is a 3msome magic vines that can divine things with electronic media"
+            
+        },
+        {
+            "name":"Wheel of Fortune",
+            "number":10,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RWS_Tarot_10_Wheel_of_Fortune.jpg/220px-RWS_Tarot_10_Wheel_of_Fortune.jpg",
+            "upright":"changes, cycles, fate, karma, destiny, luck",
+            "reversed":"bad luck, misfortune,clinging to control, delays, unwelcome change",
+            "stand name": "Wheel of Fortune",
+            "stand user": "ZZ",
+            "stand ability": "car"            
+        },
+        {
+            "name":"Justice",
+            "number":11,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RWS_Tarot_11_Justice.jpg/220px-RWS_Tarot_11_Justice.jpg",
+            "upright":"justice, truth, fairness, cause and effect, law",
+            "reversed":"injustice, unfairness, imbalance, unbalanced karma",
+            "stand name": "Justice",
+            "stand user": "enya",
+            "stand ability": "fog string puppetry, illusions"            
+        },
+        {
+            "name"  : "The Hanged Man",
+            "number": 12,
+            "upright":"sacrifice, lack of direction, uncertainty perspective",
+            "reversed":"stalling, lack of progress, avoidance of sacrifice, apathy",
+            "image": "",
+            "stand name": "Hanged Man",
+            "stand user": "J geil",
+            "stand ability": "long range attack from mirrors"
+
+        },
+        {
+            "name":"Death",
+            "number":13,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RWS_Tarot_13_Death.jpg/220px-RWS_Tarot_13_Death.jpg",
+            "upright":"transformation, change, transition, letting go, release",
+            "reversed":"fear of change, decay, repeating negative patterns",
+            "stand name": "Death 13",
+            "stand user": "mannish boy",
+            "stand ability": "dream world control"
+        },
+        {
+            "name":"Temperance",
+            "number":14,
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RWS_Tarot_14_Temperance.jpg/220px-RWS_Tarot_14_Temperance.jpg",
+            "upright":"balance, moderation, patience, harmony",
+            "reversed":"imbalance, excess, lack of self-control, lack of harmony",
+            "stand name": "Yellow Temperance",
+            "stand user": "rubber soul",
+            "stand ability": "Yellow Goop, assimilation, disguise, durable goo"
+        },
+        { 
+            "name": "The Devil",
+            "number": 15,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RWS_Tarot_15_Devil.jpg/220px-RWS_Tarot_15_Devil.jpg",
+            "upright":"obsession, addiction, attachment, materialism, weakness",
+            "reversed":"independence, freedom, liberation, reclaiming power",
+            "stand name": "Ebony Devil",
+            "stand user": "Devo",
+            "stand ability": "posessed objects dolls, curse after being attcked"
+        
+        },
+        { 
+            "name": "The Tower",
+            "number": 16,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RWS_Tarot_16_Tower.jpg/220px-RWS_Tarot_16_Tower.jpg",
+            "upright":"disaster, upheaval, sudden change, revelation, chaos",
+            "reversed":"avoiding disaster, delaying/resisting inevitable change",
+            "stand name": "Tower of Gray",
+            "stand user": "gray fly",
+            "stand ability": "anrgy bug"
+            
+        },
+        {
+            "name": "The Star",
+            "number": 17,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RWS_Tarot_17_Star.jpg/220px-RWS_Tarot_17_Star.jpg",
+            "upright":"hope, faith, renewal, optimism, inspiration, healing",
+            "reversed":"hopelessness, despair, pessimism, lack of faith, lack of inspiration",
+            "stand name": " Star Platinum",
+            "stand user": "Jotaro Kujo",
+            "stand ability": "Star Platinum is a 2m stand with precision and speed, can stop time for 5s"
+
+            
+        },
+        {
+            "name": "The Moon",
+            "number": 18,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RWS_Tarot_18_Moon.jpg/220px-RWS_Tarot_18_Moon.jpg",
+            "upright":"illusion, fear, insecurity, uncertainty, intuition, subconscious",
+            "reversed":"fear, misunderstanding, confusion",
+            "stand name": "unnamed imposter captain",
+            "stand user": "The Moon",
+            "stand ability": "shark man, short range stand, barnacles"
+            
+        },
+        { 
+            "name": "The Sun",
+            "number": 19,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RWS_Tarot_19_Sun.jpg/220px-RWS_Tarot_19_Sun.jpg",
+            "upright":"Happiness, vitality, confidence, optimism",
+            "reversed":"excessive enthusiasm, conciet, pessimism",
+            "stand name": "The Sun",
+            "stand user": "Arabia Fats",
+            "stand ability": "Sun, but really hot"
+            
+        },
+        { 
+            "name": "Judgement",
+            "number": 20,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RWS_Tarot_20_Judgement.jpg/220px-RWS_Tarot_20_Judgement.jpg",
+            "upright":"reckoning, awakening, renewal",
+            "reversed":"self-doubt, failure to learn, self-loathing",
+            "stand name": "Judgement",
+            "stand user": "cameo",
+            "stand ability": "Judgement can make things out of clay 'granting wishes'"
+        },
+        {
+            "name": "The World",
+            "number": 21,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RWS_Tarot_21_World.jpg/220px-RWS_Tarot_21_World.jpg",
+            "upright":"completion, fulfilment, wholeness",
+            "reversed":"lack of closure, emptiness, incompletion",
+            "stand name": "The World",
+            "stand user": "Dio Brando",
+            "stand ability": "The World is a 2m stand that can manipulate time"
+            
+        }
+    ]
+
+    
+}
