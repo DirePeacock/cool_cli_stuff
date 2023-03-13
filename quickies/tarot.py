@@ -89,6 +89,10 @@ class ArcanaDeck:
 class TarotRunner:
     def __init__(self) -> None:
         self.deck = ArcanaDeck()
+        self.qa_pairs = [
+            (self._quiz_get_name, self._quiz_get_number),
+            (self._quiz_get_upright, self._quiz_get_name),
+        ]
 
     def get(self, thing):
         if str(thing).isnumeric():
@@ -173,14 +177,30 @@ class TarotRunner:
         "get upright reading"
         return card.upright
 
+    def _quiz_get_number(self, card):
+        "get number of card"
+        return card.number
+
+    def _quiz_get_input(self):
+        "get input from user"
+        value = None
+        while value is None:
+            _value = input("> ")
+            if _value.isnumeric() and int(_value) in range(0, 5):
+                value = int(_value)
+        return value
+
     def _quiz_question(self):
         """print name, provide random choices, ask for answer, return True/False"""
-        name_first = random.random() < 0.7
-        question = "Which card is this?"
+        this_qa_reverse = random.random() < 0.7
+        this_qa_pair = random.choice(self.qa_pairs)
+
+        question_func = this_qa_pair[0] if not this_qa_reverse else this_qa_pair[1]
+        answer_func = this_qa_pair[1] if not this_qa_reverse else this_qa_pair[0]
+        # question_func = self._quiz_get_name if this_qa_reverse else self._quiz_get_upright
+        # answer_func = self._quiz_get_upright if this_qa_reverse else self._quiz_get_name
 
         card = self._draw()
-        question_func = self._quiz_get_name if name_first else self._quiz_get_upright
-        answer_func = self._quiz_get_upright if name_first else self._quiz_get_name
 
         print(question_func(card))
         choices = [self._draw() for _ in range(3)]
@@ -189,7 +209,8 @@ class TarotRunner:
         enumerated_choices = list(choices)
         for i, choice in enumerate(choices):
             print(f"{i + 1}: {answer_func(choice)}")
-        answer = input("Which card is this? (# of answer)\n")
+        print("please enter the # of the correct answer?")
+        answer = self._quiz_get_input()
         answer_index = int(answer) - 1
         correct_value = answer_func(card)
         chosen_value = answer_func(enumerated_choices[answer_index])
@@ -206,13 +227,14 @@ if __name__ == "__main__":
     args.add_argument("-i", "--info", type=str, nargs="*")
     args.add_argument("-r", "--reading", action="store_true", default=False)
     args.add_argument("-d", "--draw", type=int, nargs="*", default=None)
-    args.add_argument("-q", "--quiz", type=int, nargs="*", default=None)
+    args.add_argument("-q", "--quiz", type=int, nargs="?", default=1)
     args.add_argument("args", nargs="*")
     args = args.parse_args()
     print("\n")
     if args.quiz:
-        TarotRunner().quiz_main(*args.quiz)
-    if args.info:
+        print("q")
+        TarotRunner().quiz_main(args.quiz)
+    elif args.info:
         # print("info\n")
         TarotRunner().info_main(*args.info)
     elif args.reading:
