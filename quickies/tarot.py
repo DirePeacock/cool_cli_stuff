@@ -194,12 +194,16 @@ class TarotRunner:
         answer = self._quiz_get_num_input()
         answer_index = int(answer) - 1
         correct_value = answer_func(card)
+        correct_number_val = choices.index(card) + 1
         chosen_value = answer_func(enumerated_choices[answer_index])
+
         is_correct = chosen_value == correct_value
         if is_correct:
             print("Correct!")
         else:
-            print(f"Incorrect. The answer was:\n\t{answer_func(card)}")
+            print(
+                f"Incorrect. The answer was:\n\t{correct_number_val}) {answer_func(card)}"
+            )
         return is_correct
 
     def _quiz_say_upright_question(self):
@@ -230,6 +234,9 @@ class TarotRunner:
 
             print(f"Incorrect. The answer was:\n\t{card.upright}")
             print(f"you had {current_matches} matches")
+        else:
+            print("Correct!")
+            print("the other matches were: {}".format(", ".join(things_cards_means)))
         return is_correct
 
     def _quiz_get_name(self, card):
