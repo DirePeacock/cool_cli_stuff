@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+import sys
 import math
 import time
 import random
@@ -88,8 +89,6 @@ class ArcanaDeck:
 
 
 class TarotRunner:
-    question_types = ["multiple choice", "blank entry", "meaning"]
-
     def __init__(self) -> None:
         self.deck = ArcanaDeck()
         self.qa_pairs = [
@@ -149,8 +148,8 @@ class TarotRunner:
         return is_correct
 
     def choose_mode(self):
-        mc_weight = 0
-        fill_in_weight = 0
+        mc_weight = 2
+        fill_in_weight = 1
         meaning_weight = 1
         sum_weights = mc_weight + fill_in_weight + meaning_weight
         mc_odds = mc_weight / sum_weights
@@ -334,13 +333,17 @@ if __name__ == "__main__":
     args.add_argument("-i", "--info", type=str, nargs="*")
     args.add_argument("-r", "--reading", action="store_true", default=False)
     args.add_argument("-d", "--draw", type=int, nargs="*", default=None)
-    args.add_argument("-q", "--quiz", type=int, nargs="?", default=1)
+    args.add_argument("-q", "--quiz", type=int, nargs="*", default=1)
     args.add_argument("args", nargs="*")
     args = args.parse_args()
+
+    # if q isn't there ignore default arg
+    is_quiz = "-q" in sys.argv or "--quiz" in sys.argv
+
     print("\n")
-    if args.quiz:
-        print("q")
-        TarotRunner().quiz_main(args.quiz)
+    if is_quiz:
+        # print("q")
+        TarotRunner().quiz_main(*args.quiz)
     elif args.info:
         # print("info\n")
         TarotRunner().info_main(*args.info)
